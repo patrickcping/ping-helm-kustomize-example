@@ -1,0 +1,11 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+resources:
+- all.yaml
+
+patches:
+- path: wait-for-directory.yaml
+  target:
+    name: pingfederate-cluster-admin
+    kind: Deployment
